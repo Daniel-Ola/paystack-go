@@ -34,7 +34,7 @@ type CustomerList struct {
 	Values []Customer `json:"data"`
 }
 
-//CustomerIdentityValidation is a request object for validating a customer's ID
+// CustomerIdentityValidation is a request object for validating a customer's ID
 type CustomerIdentityValidation struct {
 	Country       string `json:"country,omitempty"`
 	Type          string `json:"type,omitempty"`
@@ -126,7 +126,7 @@ func (s *CustomerService) DeactivateAuthorization(authorizationCode string) (*Re
 // ValidateIdentityByBVN validates a customer's Identity with their BVN Number
 // For more details see https://paystack.com/docs/api/#customer-validate
 func (s *CustomerService) ValidateIdentityByBVN(customer *Customer, country, bvn string) (*Response, error) {
-	u := fmt.Sprintf("customer/%v/identification", customer.ID)
+	u := fmt.Sprintf("customer/%v/identification", customer.CustomerCode)
 	vReq := &CustomerIdentityValidation{
 		Country:   country,
 		Type:      "bvn",

@@ -1,4 +1,4 @@
-module github.com/0sax/paystack-go
+module github.com/Daniel-Ola/paystack-go
 
 go 1.16
 
